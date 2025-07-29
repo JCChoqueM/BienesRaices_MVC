@@ -1,0 +1,85 @@
+/* BLOQUE imports [inicio] */
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+/* !BLOQUE imports [fin] */
+
+/* BLOQUE fondo-header [inicio] */
+.no-webp .inicio {
+  background-image: url(../img/header.jpg);
+}
+.webp .inicio {
+  background-image: url(../img/header.webp);
+}
+/* !BLOQUE fondo-header [fin] */
+
+/* BLOQUE header [inicio] */
+.header {
+  background-color: v.$grisOscuro;
+  padding: 1rem 0 3rem 0;
+
+  /* subBloque header-inicio [inicio] */
+  &.inicio {
+    background-position: center center;
+    background-size: cover;
+
+    /* Mixin para pantallas tablet (usa media queries) */
+    @include m.tablet {
+      min-height: 70rem;
+    }
+
+    /* subBloque2 contenido-header [inicio] */
+    .contenido-header {
+      /* También fija altura mínima en tablet dentro del contenido */
+      @include m.tablet {
+        min-height: 70rem;
+      }
+    }
+    /* !subBloque2 contenido-header [fin] */
+  }
+  /* !subBloque header-inicio [fin] */
+}
+/* !BLOQUE header [fin] */
+
+/* BLOQUE contenido-header [inicio] */
+.contenido-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+
+  /* subBloque titulo-header [inicio] */
+  h1 {
+    text-align: left;
+    color: v.$blanco;
+    font-size: 2.5rem;
+    line-height: 2.5rem;
+    max-width: 400px;
+  }
+  /* !subBloque titulo-header [fin] */
+}
+/* !BLOQUE contenido-header [fin] */
+
+/* --- EXPLICACIÓN EXTRA --- */
+
+/*
+& → En Sass, el símbolo & significa “en este mismo selector”.
+Por ejemplo:
+.header {
+  &.inicio { ... }
+}
+es lo mismo que escribir:
+.header.inicio { ... }
+*/
+
+/*
+: → Se usa para pseudo-clases, que son estados especiales de los elementos.
+Ejemplo: :hover (cuando pasas el mouse), :focus (cuando haces clic en un campo).
+*/
+
+/*
+:: → Se usa para pseudo-elementos, que son partes virtuales creadas por CSS.
+Ejemplo: ::before (algo que aparece antes), ::after (algo que aparece después).
+Esto te permite añadir decoración sin agregar más elementos al HTML.
+*/
+
+/* !SECTION fin - header */

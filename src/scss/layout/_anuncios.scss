@@ -1,0 +1,77 @@
+// BLOQUE imports [inicio]
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+@use 'sass:color';
+// !BLOQUE imports [fin]
+
+// BLOQUE grid anuncios [inicio]
+@include m.tablet {
+  // subBloque contenedor-anuncios [inicio]
+  .contenedor-anuncios {
+    @include m.grid(3, 2rem);
+  }
+  // !subBloque contenedor-anuncios [fin]
+}
+// !BLOQUE grid anuncios [fin]
+
+// BLOQUE anuncio [inicio]
+.anuncio {
+  // subBloque fondo y borde [inicio]
+  background-color: color.adjust(v.$gris, $lightness: 5%);
+  border: 1px solid color.adjust(v.$gris, $lightness: -10%);
+  margin-bottom: 2rem;
+  // !subBloque fondo y borde [fin]
+
+  // subBloque contenido-anuncio [inicio]
+  .contenido-anuncio {
+    padding: 2rem;
+  }
+  // !subBloque contenido-anuncio [fin]
+
+  // subBloque titulos y parrafos [inicio]
+  h3,
+  p {
+    margin: 0;
+  }
+  // !subBloque titulos y parrafos [fin]
+}
+// !BLOQUE anuncio [fin]
+
+// BLOQUE precio [inicio]
+.precio {
+  // subBloque estilo-precio [inicio]
+  font-weight: bold;
+  color: v.$verde;
+  font-size: 3rem;
+  // !subBloque estilo-precio [fin]
+}
+// !BLOQUE precio [fin]
+
+// BLOQUE iconos-caracteristicas [inicio]
+.iconos-caracteristicas {
+  // subBloque lista-iconos [inicio]
+  display: flex;
+  list-style: none;
+  padding: 0;
+  max-width: 40rem;
+  // !subBloque lista-iconos [fin]
+
+  // subBloque item-caracteristica [inicio]
+  li {
+    flex: 1;
+    display: flex;
+    // subBloque2 icono-imagen [inicio]
+    img {
+      flex: 0 0 3rem;
+      margin-right: 1rem;
+    }
+    // !subBloque2 icono-imagen [fin]
+    // subBloque2 icono-texto [inicio]
+    p {
+      font-weight: v.$black;
+    }
+    // !subBloque2 icono-texto [fin]
+  }
+  // !subBloque item-caracteristica [fin]
+}
+// !BLOQUE iconos-caracteristicas [fin]

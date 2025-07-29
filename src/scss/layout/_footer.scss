@@ -1,0 +1,28 @@
+// BLOQUE imports [inicio]
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+// !BLOQUE imports [fin]
+
+// BLOQUE footer [inicio]
+.footer {
+  padding: calc(v.$separacion / 2);
+  background-color: v.$grisOscuro;
+  margin-bottom: 0;
+  // subBloque contenedor-footer [inicio]
+  .contenedor--footer {
+    padding-top: calc(v.$separacion / 2);
+  }
+  // !subBloque contenedor-footer [fin]
+  .navegacion{
+    visibility: visible;
+    opacity: 1;
+    height: auto;
+  }
+  // subBloque copyright [inicio]
+  .copyrigth {
+    color: v.$blanco;
+    text-align: center;
+  }
+  // !subBloque copyright [fin]
+}
+// !BLOQUE footer [fin]

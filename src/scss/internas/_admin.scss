@@ -1,0 +1,74 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+@use 'sass:color';
+
+.alerta {
+  padding: 0.5 rem;
+  text-align: center;
+  color: v.$blanco;
+  font-weight: v.$bold;
+  text-transform: uppercase;
+  margin: 1rem 0;
+
+  &.error {
+    background-color: rgb(212, 29, 16);
+  }
+  &.exito {
+    background-color: v.$verde;
+    &.amarillo {
+      background-color: v.$amarillo;
+    }
+    &.rojo {
+      background-color: v.$rojo;
+    }
+  }
+}
+
+table.propiedades {
+  margin-top: 4rem;
+  width: 100%;
+  border-collapse: collapse;
+
+  thead {
+    background-color: v.$verde;
+
+    th {
+      color: v.$blanco;
+      padding: 1.5rem;
+      border: 1px solid color.scale(v.$verde, $lightness: -10%);
+      text-align: left;
+    }
+  }
+
+  tbody {
+    tr {
+      &:nth-child(even) {
+        background-color: color.scale(v.$verde, $lightness: 20%);
+      }
+
+      &:nth-child(odd) {
+        background-color: color.scale(v.$verde, $lightness: 45%);
+      }
+
+      &:hover {
+        background-color: color.scale(v.$verde, $lightness: 65%);
+      }
+    }
+
+    td {
+      padding: 1.2rem;
+      border: 1px solid color.scale(v.$verde, $lightness: -10%);
+      vertical-align: middle;
+    }
+  }
+
+  .imagen-tabla {
+    width: 10rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.imagen-small {
+  width: 20rem;
+}

@@ -1,0 +1,42 @@
+// BLOQUE imports [inicio]
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+@use 'sass:color';
+// !BLOQUE imports [fin]
+
+// BLOQUE imagen-contacto [inicio]
+.no-webp .imagen-contacto {
+  background-image: url(../img/encuentra.jpg);
+}
+
+/* Si el navegador SÍ soporta WebP, usa imagen WebP (más ligera) como fondo */
+.webp .imagen-contacto {
+  background-image: url(../img/encuentra.webp);
+}
+
+.imagen-contacto {
+  // subBloque fondo y layout [inicio]
+  background-position: center center;
+  background-size: cover;
+  padding: v.$separacion * 2 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  // !subBloque fondo y layout [fin]
+
+  // subBloque2 titulo [inicio]
+  h2 {
+    color: v.$blanco;
+    font-weight: v.$black;
+    font-size: 4rem;
+  }
+  // !subBloque2 titulo [fin]
+
+  // subBloque2 parrafo [inicio]
+  p {
+    font-size: 1.8rem;
+    color: v.$blanco;
+  }
+  // !subBloque2 parrafo [fin]
+}
+// !BLOQUE imagen-contacto [fin]
