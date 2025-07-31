@@ -81,7 +81,7 @@ function versionAvif(done) {
   src('src/img/**/*.{png,jpg}') //{jpg,png}formatos a buscar
     /* prettier-ignore-start */
     .pipe(avif(opciones)) //convierte las imagenes en webp en memoria
-    .pipe(dest('build/img')); // almacena las imagenes en el disco duro generado por .pipe(webp(opciones))
+    .pipe(dest('./public/build/img')); // almacena las imagenes en el disco duro generado por .pipe(webp(opciones))
   /* prettier-ignore-end */
   done();
 }
