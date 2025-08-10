@@ -14,7 +14,7 @@
         "psr-4": {
             "Model\\" : "./models",
             "MVC\\" : "./",
-            "Controller\\" : "./controllers",
+            "Controllers\\" : "./controllers",
             "View\\" : "./views"
         }
     }

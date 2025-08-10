@@ -1,32 +1,35 @@
 <?php
+
 namespace MVC;
-class Router{
+
+class Router
+{
 
     public $rutasGET = [];
     public $rutasPOST = [];
-    public function get($url, $fn){
+    public function get($url, $fn)
+    {
         $this->rutasGET[$url] = $fn;
     }
 
-    public function comprobarRutas(){
-       $urlActual = $_SERVER['PATH_INFO'] ?? '/';
-  
-       $metodo = $_SERVER['REQUEST_METHOD'];
+    public function comprobarRutas()
+    {
+        $urlActual = $_SERVER['PATH_INFO'] ?? '/';
 
-       if ($metodo === 'GET') {
+        $metodo = $_SERVER['REQUEST_METHOD'];
 
-        $fn = $this->rutasGET[$urlActual]?? null;
-           
-       } else {
-           $fn = $this->rutasPOST[$urlActual] ?? null;
-       }
+        if ($metodo === 'GET') {
 
-       if ( $fn ) {
-        //La url existe y hay una fn asociada
-          call_user_func($fn, $this);
-       }else{
-           echo "Pagina no encontrada o no disponible";
-       }
+            $fn = $this->rutasGET[$urlActual] ?? null;
+        } else {
+            $fn = $this->rutasPOST[$urlActual] ?? null;
+        }
 
+        if ($fn) {
+            //La url existe y hay una fn asociada     
+            call_user_func($fn, $this);
+        } else {
+            echo "Pagina no encontrada o no disponible";
+        }
     }
 }
