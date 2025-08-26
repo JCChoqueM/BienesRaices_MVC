@@ -12,6 +12,4 @@ $router->get('/propiedades/actualizar', [PropiedadController::class, 'actualizar
 
 
 
-
-
 $router->comprobarRutas();

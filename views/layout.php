@@ -21,11 +21,12 @@ if(!isset($inicio)) {
     <title>Bienes Raices </title>
     <link
         rel="stylesheet"
-        href="./build/css/app.css" />
+        href="../build/css/app.css" />
 </head>
 
 <body>
     <!-- BLOQUE header [inicio] -->
+    
     <header class="header <?php echo $inicio ? 'inicio' : ''; ?>">
         <div class="contenedor <?php echo $inicio ? 'contenido-header' : ''; ?> ">
             <!-- subBloque barra [inicio] -->
@@ -33,19 +34,19 @@ if(!isset($inicio)) {
                 <!-- subBloque2 logo BienesRaices [inicio] -->
                 <a href="/index.php">
                     <img
-                        src="./build/img/logo.svg"
+                        src="../build/img/logo.svg"
                         alt="Logotipo de Bienes Raices" />
                 </a>
                 <!-- !subBloque2 logo BienesRaices [fin] -->
                 <div class="mobile-menu">
                     <img
-                        src="./build/img/barras.svg"
+                        src="../build/img/barras.svg"
                         alt="icono menu responsive" />
                 </div>
                 <!-- subBloque2 navegacion [inicio] -->
                 <div class="derecha">
                     <img
-                        src="./build/img/dark-mode.svg"
+                        src="../build/img/dark-mode.svg"
                         class="dark-mode-boton" />
                     <nav class="navegacion">
                         <a href="nosotros.php"> Nosotros</a>
@@ -81,8 +82,8 @@ echo $contenido;
   </div>
   <p class="copyrigth">Todos los derechos reservados <?php echo date('Y'); ?> &copy</p>
 </footer>
-<script src="./build/js/modernizr.js"></script>
-<script src="./build/js/app.js"></script>
+<script src="../build/js/modernizr.js"></script>
+<script src="../build/js/app.js"></script>
 <script src="/llenado.js"></script>
 </body>
 

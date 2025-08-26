@@ -25,7 +25,8 @@ class Router
         }
 
         if ($fn) {
-            //La url existe y hay una fn asociada   
+            //La url existe y hay una fn asociada  
+
             call_user_func($fn, $this);
         } else {
             echo "Pagina no encontrada o no disponible";
@@ -33,11 +34,17 @@ class Router
     }
 
     //Muestra una vista
-    public function render($view)
+    public function render($view, $datos = [])
     {
+       foreach ($datos as $key => $value) {
+   
+        
+       $$key = $value;
+       }
         ob_start();
-        include __DIR__ ."/views/$view.php";
+        include __DIR__ . "/views/$view.php";
         $contenido = ob_get_clean();
-        include __DIR__ . '/views/layout.php';
+
+        include __DIR__ . "/views/layout.php";
     }
 }
