@@ -12,6 +12,10 @@ class Router
     {
         $this->rutasGET[$url] = $fn;
     }
+     public function post($url, $fn)
+    {
+        $this->rutasPOST[$url] = $fn;
+    }
 
     public function comprobarRutas()
     {
@@ -21,6 +25,7 @@ class Router
         if ($metodo === 'GET') {;
             $fn = $this->rutasGET[$urlActual] ?? null;
         } else {
+           
             $fn = $this->rutasPOST[$urlActual] ?? null;
         }
 
@@ -29,7 +34,8 @@ class Router
 
             call_user_func($fn, $this);
         } else {
-            echo "Pagina no encontrada o no disponible";
+            
+            echo "Pagina no encontrada";
         }
     }
 
@@ -38,7 +44,7 @@ class Router
     {
        foreach ($datos as $key => $value) {
    
-        
+
        $$key = $value;
        }
         ob_start();
