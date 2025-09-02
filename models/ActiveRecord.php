@@ -73,7 +73,7 @@ class ActiveRecord
 
     //Eliminar un registro
     public function eliminar()
-    {;
+    {
         $query = "DELETE FROM " . static::$tabla . " WHERE id = " . self::$db->escape_string($this->id) . " LIMIT 1";
 
 
