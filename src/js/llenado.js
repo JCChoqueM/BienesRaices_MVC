@@ -12,7 +12,7 @@ function numeroAleatorio(min, max) {
 }
 
 document.getElementById('auto-fill').addEventListener('click', function () {
-  fetch('contar_propiedades.php')
+  fetch('/contar_propiedades.php')
     .then((response) => response.text())
     .then((data) => {
       const cantidadPropiedades = parseInt(data);
@@ -38,7 +38,7 @@ document.getElementById('auto-fill').addEventListener('click', function () {
       document.getElementById('estacionamiento').value = estacionamiento;
 
       // Elige aleatoriamente uno de los vendedores disponibles
-      const selectVendedor = document.getElementById('vendedores_id');
+      const selectVendedor = document.getElementById('vendedor');
       const totalOpciones = selectVendedor.options.length;
       if (totalOpciones > 1) {
         const indice = numeroAleatorio(1, totalOpciones - 1);

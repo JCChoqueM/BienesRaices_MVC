@@ -92,6 +92,7 @@ function javascript(done) {
   src('src/js/**/*.js')
     /* prettier-ignore-start */
     .pipe(sourcemaps.init())
+    .pipe(plumber())
     .pipe(terser()) //minificar el js
     .pipe(sourcemaps.write('.'))
     .pipe(dest('./public/build/js'));
@@ -117,7 +118,7 @@ exports.js = javascript; // Exporta la función css
 exports.imagenes = imagenes; // Exporta la función imagenes
 exports.versionWebp = versionWebp; // Exporta la función versionWebp
 exports.versionAvif = versionAvif; // Exporta la función versionAvif
-exports.dev = parallel(css,imagenes, versionWebp, versionAvif, javascript, dev); // Exporta la función dev que ejecuta versionWebp y dev en paralelo dev a la misma ves trae a la funcion  css
+exports.dev = parallel(css, imagenes, versionWebp, versionAvif, javascript, dev); // Exporta la función dev que ejecuta versionWebp y dev en paralelo dev a la misma ves trae a la funcion  css
 // Exporta la función dev que ejecuta versionWebp y dev en paralelo dev a la misma ves trae a la funcion  css
 /* !section2 fin - hacer disponibles las funciones creadas */
 /* !SECTION fin - ejecutar varias tareas al mismo tiempo */

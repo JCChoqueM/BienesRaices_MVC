@@ -31,19 +31,8 @@
         placeholder="Tu Nombre"
         name="contacto[nombre]"
         required />
-      <label for="email">Email:</label>
-      <input
-        type="email"
-        id="email"
-        placeholder="Tu Email"
-        name="contacto[email]"
-        required />
-      <label for="telefono">Telefono:</label>
-      <input
-        type="tel"
-        id="telefono"
-        placeholder="Tu Telefono"
-        name="contacto[telefono]" />
+   
+      
       <label for="mensaje">Mensaje:</label>
       <textarea id="mensaje" name="contacto[mensaje]" required></textarea>
     </fieldset>
@@ -77,39 +66,30 @@
           type="radio"
           name="contacto[contacto]"
           value="telefono"
-          id="contactar-telefono" 
-          required/>
+          id="contactar-telefono"
+          required />
         <label for="contactar-email">Email</label>
         <input
           type="radio"
           name="contacto[contacto]"
           value="email"
-          id="contactar-email" 
-          required/>
+          id="contactar-email"
+          required />
       </div>
-      <p>Si eligio telefono, elija la fecha y la hora</p>
-      <label for="fecha">Fecha:</label>
-      <input
-        type="date"
-        id="fecha"
-        name="contacto[fecha]" />
-      <label for="hora">Hora:</label>
-      <input
-        type="time"
-        id="hora"
-        min="09:00"
-        max="18:00"
-        name="contacto[hora]" />
+
+      <div id="contacto"></div>
+
+    
     </fieldset>
     <input
       type="submit"
       value="Enviar"
       class="boton boton-verde" />
   </form>
-  </main>
+</main>
 
 <script>
-  document.getElementById("llenarForm").addEventListener("click", function () {
+  document.getElementById("llenarForm").addEventListener("click", function() {
     document.getElementById("nombre").value = "Juan Pérez";
     document.getElementById("email").value = "juanperez@example.com";
     document.getElementById("telefono").value = "71234567";
