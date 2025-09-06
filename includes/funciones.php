@@ -67,6 +67,16 @@ function mostrarNotificacion($codigo)
                 'mensaje' => 'Eliminado Correctamente',
                 'valor' => 'rojo'
             ];
+        case 4:
+            return [
+                'mensaje' => 'Mensaje Enviado correctamente',
+                'valor' => 'verde'
+            ];
+        case 5:
+            return [
+                'mensaje' => 'Error al enviar el mensaje',
+                'valor' => 'rojo'
+            ];
         default:
             return false;
     }

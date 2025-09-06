@@ -49,10 +49,10 @@ if(!isset($inicio)) {
                         src="../build/img/dark-mode.svg"
                         class="dark-mode-boton" />
                     <nav class="navegacion">
-                        <a href="nosotros"> Nosotros</a>
-                        <a href="propiedades">Anuncio</a>
-                        <a href="blog">Blog</a>
-                        <a href="contacto">Contacto</a>
+                        <a href="/nosotros"> Nosotros</a>
+                        <a href="/propiedades">Anuncio</a>
+                        <a href="/blog">Blog</a>
+                        <a href="/contacto">Contacto</a>
                         <?php if ($auth) : ?>
                             <a href="/cerrar-sesion.php">Cerrar Sesión</a>
                         <?php endif; ?>

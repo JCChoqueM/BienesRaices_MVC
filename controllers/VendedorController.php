@@ -29,6 +29,7 @@ class VendedorController
       'errores' => $errores
     ]);
   }
+  
   public static function actualizar(Router $router)
   {
 

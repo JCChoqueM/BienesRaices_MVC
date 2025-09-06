@@ -1,13 +1,17 @@
 <main class="contenedor seccion">
     <h1>Administrador de Bienes Raices</h1>
     <?php
+
+
     if ($resultado) {
+     
         $mensaje = mostrarNotificacion(intval($resultado));
         if ($mensaje) { ?>
             <p class="alerta exito <?php echo $mensaje['valor']; ?>">
                 <?php
                 echo $mensaje['mensaje'];
-                ?></p>
+                ?>
+            </p>
     <?php }
     }
     ?>

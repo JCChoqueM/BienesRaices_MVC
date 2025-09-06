@@ -1,5 +1,21 @@
 <main class="contenedor seccion">
   <h1>Contacto</h1>
+
+
+  <?php
+  if ($send) {
+
+    $mensaje = mostrarNotificacion(intval($send));
+    if ($mensaje) { ?>
+      <p class="alerta exito <?php echo $mensaje['valor']; ?>">
+        <?php
+        echo $mensaje['mensaje'];
+        ?>
+      </p>
+  <?php }
+  }
+  ?>
+
   <picture>
     <source
       srcset="build/img/destacada.webp"
@@ -31,8 +47,8 @@
         placeholder="Tu Nombre"
         name="contacto[nombre]"
         required />
-   
-      
+
+
       <label for="mensaje">Mensaje:</label>
       <textarea id="mensaje" name="contacto[mensaje]" required></textarea>
     </fieldset>
@@ -79,7 +95,7 @@
 
       <div id="contacto"></div>
 
-    
+
     </fieldset>
     <input
       type="submit"
@@ -89,25 +105,56 @@
 </main>
 
 <script>
+  function llenarTelefono() {
+    setTimeout(() => {
+      const telefonoInput = document.getElementById("telefono");
+      const fechaInput = document.getElementById("fecha");
+      const horaInput = document.getElementById("hora");
+
+      if (telefonoInput) telefonoInput.value = "71234567";
+
+      // Fecha de hoy
+      let hoy = new Date().toISOString().split("T")[0];
+      if (fechaInput) fechaInput.value = hoy;
+
+      // Hora por defecto (10:00)
+      if (horaInput) horaInput.value = "10:00";
+    }, 50);
+  }
+
+  function llenarEmail() {
+    setTimeout(() => {
+      const emailInput = document.getElementById("email");
+      if (emailInput) emailInput.value = "juanperez@example.com";
+    }, 50);
+  }
+
   document.getElementById("llenarForm").addEventListener("click", function() {
+    // Campos personales
     document.getElementById("nombre").value = "Juan Pérez";
-    document.getElementById("email").value = "juanperez@example.com";
-    document.getElementById("telefono").value = "71234567";
     document.getElementById("mensaje").value = "Estoy interesado en una propiedad.";
 
+    // Información sobre propiedad
     document.getElementById("opciones").value = "Compra";
     document.getElementById("presupuesto").value = 50000;
 
-    document.getElementById("contactar-email").checked = true;
+    // Seleccionar método de contacto por defecto: TELÉFONO
+    const contactoTel = document.getElementById("contactar-telefono");
+    contactoTel.checked = true;
+    contactoTel.dispatchEvent(new Event("click")); // muestra campos dinámicos
 
-    // Fecha de hoy por defecto
-    let hoy = new Date().toISOString().split("T")[0];
-    document.getElementById("fecha").value = hoy;
-
-    // Hora por defecto (10:00)
-    document.getElementById("hora").value = "10:00";
+    // Rellenar teléfono
+    llenarTelefono();
   });
+
+  // Cuando se hace click en Teléfono → rellenar otra vez
+  document.getElementById("contactar-telefono").addEventListener("click", llenarTelefono);
+
+  // Cuando se hace click en Email → rellenar email
+  document.getElementById("contactar-email").addEventListener("click", llenarEmail);
 </script>
+
+
 <style>
   .boton {
     display: inline-block;

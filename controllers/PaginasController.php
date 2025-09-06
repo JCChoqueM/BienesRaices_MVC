@@ -51,8 +51,12 @@ class PaginasController
    {
       $router->render("paginas/entrada", []);
    }
+
+
    public static function contacto(Router $router)
    {
+      $send = $_GET['send'] ?? null;
+
       if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
          $respuestas = $_POST['contacto'];
@@ -64,32 +68,48 @@ class PaginasController
          $mail->isSMTP();
          $mail->Host = 'sandbox.smtp.mailtrap.io';
          $mail->SMTPAuth = true;
-         $mail->Username = '2fa30b65028981';
-         $mail->Password = '2b53453ad4ce9d';
-         $mail->SMTPSecure = 'tls'; //tls=transport layer security  'mas seguro que ssl'
+         $mail->Username = '8fefb8f9915fa9';
+         $mail->Password = 'ed2804ec46bcf4';
+         //funciona
+         /*          $mail->Username = '8fefb8f9915fa9';
+         $mail->Password = 'ed2804ec46bcf4'; */
+
+         //no funciona
+   /*       $mail->Username = '2fa30b65028981';
+         $mail->Password = '2b53453ad4ce9d'; */
+
+         $mail->SMTPSecure = 'tls';
          $mail->Port = 2525;
 
          //configurar el contenido del mail
-         $mail->setFrom('admin@bienesraices.com'); //quien envia el mail
-         $mail->addAddress('admin@bienesraices.com', 'BienesRaices.com'); //quien recibe el mail
+         $mail->setFrom('admin@bienesraices.com');
+         $mail->addAddress('admin@bienesraices.com', 'BienesRaices.com');
          $mail->Subject = 'Tienes un nuevo mensaje';
 
          //habilitar HTML
-         $mail->isHTML(true); //enviar como HTML
-         $mail->CharSet = 'UTF-8'; //caracteres especiales (español ñ ´)
+         $mail->isHTML(true);
+         $mail->CharSet = 'UTF-8';
 
          //definir el contenido
          $contenido = '<html>';
          $contenido .= '<p>Un nuevo cliente quiere contactarse con ustedes</p>';
          $contenido .= '<p>Nombre: ' . $respuestas['nombre'] . '</p>';
-         $contenido .= '<p>Email: ' . $respuestas['email'] . '</p>';
-         $contenido .= '<p>Teléfono: ' . $respuestas['telefono'] . '</p>';
+
+         if ($respuestas['contacto'] == 'telefono') {
+            $contenido .= '<p>Eligio ser contactado por Teléfono. </p>';
+            $contenido .= '<p>Teléfono: ' . $respuestas['telefono'] . '</p>';
+            $contenido .= '<p>Fecha de contacto: ' . $respuestas['fecha'] . '</p>';
+            $contenido .= '<p>Hora de contacto: ' . $respuestas['hora'] . '</p>';
+         } else {
+            $contenido .= '<p>Eligio ser contactado por email:</p>';
+            $contenido .= '<p>Email: ' . $respuestas['email'] . '</p>';
+         }
+
          $contenido .= '<p>Mensaje: ' . $respuestas['mensaje'] . '</p>';
          $contenido .= '<p>Vende o compra:' . $respuestas['tipo'] . '</p>';
          $contenido .= '<p>Precio o presupuesto: $' . $respuestas['precio'] . '</p>';
          $contenido .= '<p>Prefiere ser contactado por: ' . $respuestas['contacto'] . '</p>';
-          $contenido.= '<p>Fecha de contacto: ' . $respuestas['fecha'] . '</p>';
-         $contenido .= '<p>Hora de contacto: ' . $respuestas['hora'] . '</p>';
+
          $contenido .= ' <p>Tienes un nuevo mensaje</p>';
          $contenido .= '</html>';
          $mail->Body .= $contenido;
@@ -99,11 +119,18 @@ class PaginasController
 
          //enviar el mail
          if ($mail->send()) {
-            echo 'Mensaje enviado correctamente';
+            $mensaje = '(send)Mensaje enviado correctamente';
+            header('Location: /contacto?send=4');
+            exit;
          } else {
-            echo 'Error al enviar el mensaje';
+            $mensaje = '(send)Error al enviar el mensaje';
+            header('Location: /contacto?send=5');
+            exit;
          }
       }
-      $router->render("paginas/contacto", []);
+
+      $router->render("paginas/contacto", [
+         'send' => $send
+      ]);
    }
 }
