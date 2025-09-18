@@ -18,7 +18,7 @@ if(!isset($inicio)) {
     <meta
         name="viewport"
         content="width=device-width, initial-scale=1.0" />
-    <title>Bienes Raices </title>
+    <title>Bienes Raices1 </title>
     <link
         rel="stylesheet"
         href="../build/css/app.css" />
