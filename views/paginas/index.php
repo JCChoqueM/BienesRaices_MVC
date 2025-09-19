@@ -20,7 +20,7 @@ include 'iconos.php';
     <!-- !subBloque contenedor-anuncios [fin] -->
     <div class="alinear-derecha">
         <a
-            href="anuncios.php"
+            href="/propiedades"
             class="boton-verde">Ver Todas</a>
     </div>
 </section>
