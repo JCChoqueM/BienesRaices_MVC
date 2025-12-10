@@ -1,5 +1,5 @@
 <?php
-require '../../includes/config/database.php';
+require '../../includes/database.php';
 $db = conectarDB();
 $query = "SELECT COUNT(*) as total FROM propiedades";
 $resultado = mysqli_query($db, $query);
