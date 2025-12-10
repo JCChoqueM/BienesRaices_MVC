@@ -119,6 +119,7 @@ exports.imagenes = imagenes; // Exporta la función imagenes
 exports.versionWebp = versionWebp; // Exporta la función versionWebp
 exports.versionAvif = versionAvif; // Exporta la función versionAvif
 exports.dev = parallel(css, imagenes, versionWebp, versionAvif, javascript, dev); // Exporta la función dev que ejecuta versionWebp y dev en paralelo dev a la misma ves trae a la funcion  css
+exports.build = parallel(css, imagenes, versionWebp, versionAvif, javascript); // Exporta la función dev que ejecuta versionWebp y dev en paralelo dev a la misma ves trae a la funcion  css
 // Exporta la función dev que ejecuta versionWebp y dev en paralelo dev a la misma ves trae a la funcion  css
 /* !section2 fin - hacer disponibles las funciones creadas */
 /* !SECTION fin - ejecutar varias tareas al mismo tiempo */
