@@ -2,9 +2,9 @@
     <h1>Más Sobre Nosotros</h1>
 
     <!-- subBloque iconos [inicio] -->
-<?php
-include 'iconos.php';
-?>
+    <?php
+    include 'iconos.php';
+    ?>
     <!-- !subBloque iconos [fin] -->
 </main>
 <!-- !BLOQUE main [fin] -->
@@ -20,7 +20,7 @@ include 'iconos.php';
     <!-- !subBloque contenedor-anuncios [fin] -->
     <div class="alinear-derecha">
         <a
-            href="anuncios.php"
+            href="/propiedades"
             class="boton-verde">Ver Todas</a>
     </div>
 </section>
@@ -31,7 +31,7 @@ include 'iconos.php';
     <h2>Encuentra la casa de tus sueños</h2>
     <p>Llena el formulario de contacto y un asesor se pondra en contacto contigo a la brevedad</p>
     <a
-        href="contacto.php"
+        href="/contacto"
         class="boton-amarillo">Contactános</a>
 </section>
 <!-- !BLOQUE imagen-contacto [fin] -->
@@ -60,7 +60,7 @@ include 'iconos.php';
                 </picture>
             </div>
             <div class="texto-entrada">
-                <a href="entrada.php">
+                <a href="/entrada">
                     <h4>Terraza en el techo de tu casa</h4>
                     <p informacion-meta>Escrito el: <span>20/10/2025</span> por: <span>Admin</span></p>
                     <p>
@@ -90,7 +90,7 @@ include 'iconos.php';
                 </picture>
             </div>
             <div class="texto-entrada">
-                <a href="entrada.php">
+                <a href="/entrada">
                     <h4>Guia para la decoración de tu hogar</h4>
                     <p informacion-meta>Escrito el: <span>20/10/2025</span> por: <span>Admin</span></p>
                     <p>maximiza el espacio de en tu hogar con esta guia,aprende a combinar muebles y colores para darle vida a tu espacio</p>

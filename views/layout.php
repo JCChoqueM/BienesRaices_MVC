@@ -1,9 +1,9 @@
-<?php 
- if(!isset($_SESSION)) {
+<?php
+if (!isset($_SESSION)) {
     session_start();
 }
 $auth = $_SESSION['login'] ?? false;
-if(!isset($inicio)) {
+if (!isset($inicio)) {
     $inicio = false;
 }
 
@@ -26,13 +26,13 @@ if(!isset($inicio)) {
 
 <body>
     <!-- BLOQUE header [inicio] -->
-    
+
     <header class="header <?php echo $inicio ? 'inicio' : ''; ?>">
         <div class="contenedor <?php echo $inicio ? 'contenido-header' : ''; ?> ">
             <!-- subBloque barra [inicio] -->
             <div class="barra">
                 <!-- subBloque2 logo BienesRaices [inicio] -->
-                <a href="/index.php">
+                <a href="/">
                     <img
                         src="../build/img/logo.svg"
                         alt="Logotipo de Bienes Raices" />
@@ -67,24 +67,24 @@ if(!isset($inicio)) {
         </div>
     </header>
     <!-- !BLOQUE header [fin] -->
-<?php
-echo $contenido;
-?>
+    <?php
+    echo $contenido;
+    ?>
 
     <footer class="footer seccion">
-  <div class="contenedor contenedor--footer">
-    <nav class="navegacion">
-      <a href="nosotros.php"> Nosotros</a>
-      <a href="anuncios.php">Anuncio</a>
-      <a href="blog.php">Blog</a>
-      <a href="contacto.php">Contacto</a>
-    </nav>
-  </div>
-  <p class="copyrigth">Todos los derechos reservados <?php echo date('Y'); ?> &copy</p>
-</footer>
-<script src="../build/js/modernizr.js"></script>
-<script src="../build/js/app.js"></script>
-<script src="../build/js/llenado.js"></script>
+        <div class="contenedor contenedor--footer">
+            <nav class="navegacion">
+                <a href="/nosotros"> Nosotros</a>
+                <a href="/propiedades">Anuncio</a>
+                <a href="/blog">Blog</a>
+                <a href="/contacto">Contacto</a>
+            </nav>
+        </div>
+        <p class="copyrigth">Todos los derechos reservados <?php echo date('Y'); ?> &copy</p>
+    </footer>
+    <script src="../build/js/modernizr.js"></script>
+    <script src="../build/js/app.js"></script>
+    <script src="../build/js/llenado.js"></script>
 </body>
 
 </html>
