@@ -9,7 +9,6 @@ if (!isset($inicio)) {
 
 ?>
 
-
 <!DOCTYPE html>
 <html lang="es">
 
@@ -49,7 +48,7 @@ if (!isset($inicio)) {
                         src="../build/img/dark-mode.svg"
                         class="dark-mode-boton" />
                     <nav class="navegacion">
-                        <a href="/nosotros"> Nosotros</a>
+                        <a href="/nosotros"> Nosotros2</a>
                         <a href="/propiedades">Anuncio</a>
                         <a href="/blog">Blog</a>
                         <a href="/contacto">Contacto</a>
